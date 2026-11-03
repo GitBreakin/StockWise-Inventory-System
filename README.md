@@ -38,8 +38,8 @@ PowerShell (one command per line):
 
 ```powershell
 cd C:\xampp\htdocs
-git clone https://github.com/Andrizzzz/SOLARSYSTEM.git
-cd SOLARSYSTEM
+git clone https://github.com/GitBreakin/StockWise-Inventory-System.git
+cd StockWise-Inventory-System
 git status
 ```
 
