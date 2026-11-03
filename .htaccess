@@ -1,0 +1,21 @@
+# Apache / XAMPP security rules for StockWise Inventory
+
+# Never serve hidden files such as .env or .git
+<FilesMatch "^\.">
+    Require all denied
+</FilesMatch>
+RedirectMatch 404 /\.git
+
+# Never serve SQL, Markdown or other non-web files directly
+<FilesMatch "\.(sql|md|log|sh|ini|example)$">
+    Require all denied
+</FilesMatch>
+
+# Do not list folder contents
+Options -Indexes
+
+# Basic security headers
+<IfModule mod_headers.c>
+    Header always set X-Content-Type-Options "nosniff"
+    Header always set Referrer-Policy "same-origin"
+</IfModule>

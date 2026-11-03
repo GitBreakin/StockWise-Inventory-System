@@ -1,0 +1,26 @@
+# Secrets — never commit the real environment file
+.env
+.env.*
+!.env.example
+
+# PHP / Composer
+/vendor/
+composer.phar
+
+# Logs and runtime files
+*.log
+/logs/
+/tmp/
+/sessions/
+
+# OS and editor files
+.DS_Store
+Thumbs.db
+desktop.ini
+.idea/
+.vscode/
+*.swp
+
+# Exported reports downloaded during testing
+*.csv
+!database/*.csv
