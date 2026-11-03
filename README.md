@@ -118,8 +118,8 @@ php -S localhost:8000 router.php
 Open <http://localhost:8000> and log in with the admin you created.
 Always start it with `router.php` — it blocks access to `.env` and the server-side folders.
 
-**Option B — XAMPP Apache:** put the folder in `C:\xampp\htdocs\SOLARSYSTEM`, start Apache,
-open <http://localhost/SOLARSYSTEM/>. The included `.htaccess` files block `.env`, SQL files and
+**Option B — XAMPP Apache:** put the folder in `C:\xampp\htdocs\StockWise-Inventory-System`, start Apache,
+open <http://localhost/StockWise-Inventory-System/>. The included `.htaccess` files block `.env`, SQL files and
 server-side folders (requires `AllowOverride All`, which is XAMPP's default).
 
 ## 7. Roles
@@ -139,7 +139,7 @@ Every rule is enforced **on the server** (PHP), not only by hiding buttons.
 ## 8. Project structure
 
 ```
-SOLARSYSTEM/
+StockWise-Inventory-System/
 ├── index.php, login.php, logout.php          entry pages
 ├── dashboard.php, products.php, categories.php,
 │   inventory.php, sales.php, reports.php, users.php   page shells (data loads via AJAX)
