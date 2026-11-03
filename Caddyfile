@@ -1,0 +1,11 @@
+:{$PORT:80} {
+    root * /app
+
+    encode zstd gzip
+
+    @private path /.env* /.git* /.htaccess /.dockerignore /Dockerfile* /Caddyfile /config /config/* /includes /includes/* /database /database/* /docs /docs/* /tests /tests/* /scripts /scripts/* /*.sql /*.md /*.log /*.sh /*.ini /*.example
+
+    respond @private "Not Found" 404
+
+    php_server
+}

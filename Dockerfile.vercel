@@ -1,0 +1,19 @@
+FROM dunglas/frankenphp:1-php8.4-alpine
+
+WORKDIR /app
+
+# Install PostgreSQL PDO support for Supabase
+RUN install-php-extensions pdo_pgsql
+
+# Enable PHP production settings
+RUN cp "$PHP_INI_DIR/php.ini-production" "$PHP_INI_DIR/php.ini"
+
+# Copy the web server configuration
+COPY Caddyfile /etc/caddy/Caddyfile
+
+# Copy the StockWise application
+COPY . /app
+
+ENV PORT=80
+
+CMD ["frankenphp", "run", "--config", "/etc/caddy/Caddyfile"]
